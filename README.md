@@ -1,47 +1,53 @@
-# Telecom Churn Case Study
+# Telecom Churn Prediction Case Study
 
-## Problem Statement
+## Overview
 
-## Business Problem Overview
+This project aims to predict customer churn in a telecom company using machine learning techniques. Customer churn refers to the phenomenon where customers stop doing business with a company or switch to a competitor. By accurately predicting churn, telecom companies can take proactive measures to retain customers and minimize revenue loss.
 
-In the telecom industry, customers are able to choose from multiple service providers and actively switch from one operator to another. In this highly competitive market, the telecommunications industry experiences an average of 15-25% annual churn rate. Given the fact that it costs 5-10 times more to acquire a new customer than to retain an existing one, customer retention has now become even more important than customer acquisition.
+## Dataset
 
-For many incumbent operators, retaining high profitable customers is the number one business goal.
+The dataset used in this study contains historical data of telecom customers, including various features such as call details, recharge information, usage patterns, and customer demographics. The target variable is the churn status, indicating whether a customer churned or not.
 
-To reduce customer churn, telecom companies need to predict which customers are at high risk of churn.
+### Data Dictionary
 
-In this project, we will analyse customer-level data of a leading telecom firm, build predictive models to identify customers at high risk of churn and identify the main indicators of churn.
+A detailed data dictionary is provided to describe the meaning of each column in the dataset. It includes acronyms and descriptions for features such as average revenue per user (ARPU), minutes of usage (MOU), age on network (AON), and more.
 
+## Methodology
 
-## Data Preparation
+### Data Preprocessing
 
-The following data preparation steps are crucial for this problem:
+- Handle missing values by imputing or removing them.
+- Encode categorical variables into numerical format.
+- Scale numerical features if needed.
+- Explore correlations between variables.
 
-1. **Derive new features**
-This is one of the most important parts of data preparation since good features are often the differentiators between good and bad models. We will use our business understanding to derive features that we think could be important indicators of churn.
+### Model Building
 
+- Choose appropriate models for churn prediction, such as logistic regression, decision trees, random forests, SVM, XGBoost, etc.
+- Train the models using the training data.
+- Evaluate the models using appropriate metrics such as accuracy, precision, recall, etc.
+- Fine-tune the models using techniques like hyperparameter tuning and cross-validation.
 
-## Modelling
+### Model Evaluation
 
-Build models to predict churn. The predictive model that we are going to build will serve two purposes:
+- Evaluate the performance of each model using metrics such as accuracy, precision, recall, and ROC curve analysis.
+- Compare the performance of different models to select the best-performing one for deployment.
 
+## Results
 
+- Present the results of model evaluation, including accuracy scores, confusion matrices, and ROC curves.
+- Discuss the strengths and weaknesses of each model and provide insights into their performance.
 
+## Recommendations
 
-We can take the following suggestive steps to build the model:
+Based on the analysis, provide recommendations for the telecom company to reduce churn and improve customer retention. Suggestions may include:
 
-1. Preprocess data (convert columns to appropriate formats, handle missing values, etc.)
-2. Conduct appropriate exploratory analysis to extract useful insights (whether directly useful for business or for eventual modelling/feature engineering).
-3. Derive new features.
-4. Reduce the number of variables using PCA.
-5. Train a variety of models, tune model hyperparameters, etc. (handle class imbalance using appropriate techniques).
-6. Evaluate the models using appropriate evaluation metrics. Note that it is more important to identify churners than the non-churners accurately - choose an appropriate evaluation metric which reflects this business goal.
-7. Finally, choose a model based on some evaluation metric.
+- Identify high-churn-risk customers and offer targeted incentives or discounts to retain them.
+- Improve customer service and address pain points identified in the analysis.
+- Introduce loyalty programs or special offers to reward long-term customers.
+- Analyze competitors' offerings and pricing strategies to stay competitive in the market.
 
-The above model will only be able to achieve one of the two goals - to predict customers who will churn. We can’t use the above model to identify the important features for churn. That’s because PCA usually creates components which are not easy to interpret.
+## Conclusion
 
-Therefore, we will build another model with the main objective of identifying important predictor attributes which help the business understand indicators of churn. A good choice to identify important variables is a logistic regression model or a model from the tree family. In case of logistic regression, we will make sure to handle multi-collinearity.
+Summarize the findings of the case study and emphasize the importance of proactive churn prediction and customer retention strategies in the telecom industry. Highlight any key insights or discoveries made during the analysis and discuss potential areas for further research or improvement.
 
-After identifying important predictors, display them visually - we can use plots, summary tables etc. - whatever we think best conveys the importance of features.
-
-Finally, recommend strategies to manage customer churn based on our observations.
